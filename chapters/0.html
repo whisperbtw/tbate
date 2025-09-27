@@ -1,0 +1,70 @@
+<style>
+            .entry-title {
+              text-align: center !important;
+            }
+            h1, h1.entry-title {
+              text-align: center !important;
+              margin: 20px auto;
+              display: block;
+            }
+            .chapter-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .chapter-button {
+                display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      width: 100%;
+                      max-width: 100px;
+                      height: 50px;
+                      text-align: center;
+                      border-radius: 5px;
+                      color: white;
+                      font-weight: bold;
+                      margin: 10px auto; /* centraliza o botão na tela e adiciona uma margem */
+                      background: transparent;
+                      border: 1px solid #91C9FF;
+                      outline: none;
+                      text-decoration: none;
+                      top: 50%;
+            }
+    </style><body style="background-color: #222222; color: white; margin: 25px;"><div class="entry-title">The Beginning After The End – Capítulo 0</div><h2 style="text-align: center;">Prólogo, o Início</h2><p style="text-align: center;">Lançamento novembro 18, 2021</p><p style="text-align: justify" data-mce-style="text-align: justify;">O Continente de Dicathen possui 3 reinos: O Reino Florestal Elenoir que fica no norte, O Reino Subterrâneo de Darv aproximado na fronteira do Sul, e o Reino de Sapin, localizado na fronteira leste do continente. Tem também a Clareira das Feras, da qual um grande mistério pareia sobre toda a área. Poucas partes da Clareira das Feras foram exploradas graças à existência de bestas hostis atacando os viajantes, e vice-versa. No entanto, várias expedições vem sendo feitas devido as grandes riquezas naturais que esse lugar possui…</p><p style="text-align: justify" data-mce-style="text-align: justify;">…O Reino de Elenoir é a terra natal dos Elfos, localizado nas profundezas de Elshire, onde a névoa espessa se forma naturalmente dissuadindo todos, exceto os Elfos que, com seus sentidos aguçados, conseguem navegar livremente…</p><p style="text-align: justify" data-mce-style="text-align: justify;">…O Reino de Darv é uma rede de passagens subterrâneas e enormes cavernas que podem se estender por vários quilômetros, esse território é onde os anões residem.</p><p style="text-align: justify" data-mce-style="text-align: justify;">…O Reino de Sapin é de longe, o maior e mais povoado reino do continente. Enquanto este reino é composto principalmente por humanos, há também muitos comerciantes anões, comerciando seus itens de sua terra natal…</p><p style="text-align: justify" data-mce-style="text-align: justify;">…Enquanto a Clareira das Feras abriga incontáveis monstros e criaturas, também contém maravilhosos tesouros de origens esquecidas que podem ser obtidos por aqueles que se atrevam a procurá-los nesse território tão perigoso por natureza. Há registros escritos por aventureiros e mercenários sobre masmorras e tocas de entidades poderosas que podem fazer até o padre mais generoso num ganancioso…</p><p style="text-align: justify" data-mce-style="text-align: justify;">…Entre a floresta de Elshire e o Reino de Sapin, existe uma grande cadeia de montanhas que se estende por cerca de 90% do continente, separando o Norte e o Leste do Oeste e do Sul…</p><p style="text-align: justify" data-mce-style="text-align: justify;">Enquanto o Reino de Darv e Sapin possuem uma relação simbiótica por causa dos recursos, os Elfos se isolam e agem agressivamente em relação a todos os outros…</p><p style="text-align: justify" data-mce-style="text-align: justify;">Fechando as capas desgastadas do livro que seria a enciclopédia desse mundo, Arthur esfregou a ponta de seu nariz com seus pequenos dedos gordinhos, enquanto emanava uma melancolia que era quase tangível. Soltou um suspiro audível que só parecia ser apropriado com sua boca desdentada…</p><p style="text-align: justify" data-mce-style="text-align: justify;">— PHUUUUUK…</p>
+   <div class="chapter-buttons">
+                <a id="previous-chapter-button" class="chapter-button">Capítulo Anterior</a>
+                <a href="../index.html" class="chapter-button">Home</a>
+                <a id="next-chapter-button" class="chapter-button">Próximo Capítulo</a>
+             </div> 
+    
+      <script>
+        window.onload = function() {
+          var currentChapter = window.location.pathname.split('/').pop();
+          var chapterNumber = parseInt(currentChapter.replace('', '').replace('.html', ''));
+
+          if (chapterNumber > 0) {
+            var previousChapterNumber = chapterNumber - 1;
+            var previousChapterFileName = '' + previousChapterNumber + '.html';
+            document.getElementById('previous-chapter-button').href = previousChapterFileName;
+          } else {
+            document.getElementById('previous-chapter-button').style.display = 'none';
+          }
+
+          if (chapterNumber < 529) {
+            var nextChapterNumber = chapterNumber + 1;
+            var nextChapterFileName = '' + nextChapterNumber + '.html';
+            document.getElementById('next-chapter-button').href = nextChapterFileName;
+          } else {
+            document.getElementById('next-chapter-button').style.display = 'none';
+          }
+          
+          // Marcar capítulo como lido
+          var readChapters = JSON.parse(localStorage.getItem('tbate-read-chapters') || '[]');
+          if (!readChapters.includes(chapterNumber)) {
+            readChapters.push(chapterNumber);
+            localStorage.setItem('tbate-read-chapters', JSON.stringify(readChapters));
+          }
+        };
+      </script>
+    </body>
