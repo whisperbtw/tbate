@@ -13,20 +13,19 @@ class NovelScraper {
         return `
             * { box-sizing: border-box; }
             html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-            body { background-color: #222222; color: white; margin: 0; padding: 24px; font-family: Georgia, "Times New Roman", serif; line-height: 1.8; overflow-wrap: anywhere; }
-            .entry-title { text-align: center !important; font-family: "Segoe UI", Tahoma, sans-serif; font-size: clamp(1.5rem, 4vw, 2.25rem); line-height: 1.25; margin: 20px auto 28px; }
-            h1, h1.entry-title, h2 { text-align: center !important; max-width: 900px; margin: 20px auto; line-height: 1.3; }
-            p { max-width: 900px; margin: 0 auto 1em; font-size: clamp(1rem, 1.7vw, 1.15rem); }
-            img, video, iframe { max-width: 100%; height: auto; }
-            .chapter-buttons { display: flex; justify-content: center; align-items: stretch; gap: 10px; max-width: 900px; margin: 32px auto 10px; flex-wrap: wrap; }
-            .chapter-button { display: flex; justify-content: center; align-items: center; width: min(180px, 100%); min-height: 48px; padding: 10px 14px; text-align: center; border-radius: 5px; color: white; font-weight: bold; background: transparent; border: 1px solid #91C9FF; outline: none; text-decoration: none; }
-            @media (max-width: 600px) {
-              body { padding: 14px; }
-              .entry-title { margin-top: 10px; margin-bottom: 22px; }
-              p { font-size: 1rem; line-height: 1.75; text-align: left !important; }
-              h2 { font-size: 1.35rem; }
-              .chapter-buttons { flex-direction: column; gap: 8px; }
-              .chapter-button { width: 100%; }
+            body { background:#222; color:#fff; margin:0; padding:24px; font-family:Georgia,"Times New Roman",serif; line-height:1.8; overflow-wrap:anywhere; }
+            .entry-title { text-align:center!important; font-family:"Segoe UI",Tahoma,sans-serif; font-size:clamp(1.5rem,4vw,2.25rem); line-height:1.25; margin:20px auto 28px; max-width:900px; }
+            h1,h1.entry-title,h2 { text-align:center!important; max-width:900px; margin:20px auto; line-height:1.3; }
+            p { max-width:900px; margin:0 auto 1em; font-size:clamp(1rem,1.7vw,1.15rem); }
+            img,video,iframe { max-width:100%; height:auto; }
+            .chapter-buttons { display:flex; justify-content:center; gap:10px; max-width:900px; margin:32px auto 10px; flex-wrap:wrap; }
+            .chapter-button { display:flex; justify-content:center; align-items:center; width:min(180px,100%); min-height:48px; padding:10px 14px; text-align:center; border-radius:5px; color:white; font-weight:bold; background:transparent; border:1px solid #91C9FF; text-decoration:none; }
+            @media (max-width:600px) {
+              body { padding:14px; }
+              p { font-size:1rem; line-height:1.75; text-align:left!important; }
+              h2 { font-size:1.35rem; }
+              .chapter-buttons { flex-direction:column; gap:8px; }
+              .chapter-button { width:100%; }
             }
         `;
     }
